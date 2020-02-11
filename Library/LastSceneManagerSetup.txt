@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/AT_IB.unity
+- path: Assets/Scenes/SerialCommunication.unity
   isLoaded: 1
   isActive: 1
