@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{48888E13-02A1-BED9-1E8E-FB3A5C0E2FAB}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codelab/Scripts/CodelabUtils.cs">
+    <Files>
+      <File FileName="Assets/Codelab/Scripts/CodelabUtils.cs" Line="52" Column="69" />
+      <File FileName="Assets/Scripts/SerialCommunication/SerialCommunicationManager.cs" Line="16" Column="49" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AR_AT_IB" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Codelab" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="CodelabUtils.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="SerialCommunication" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="512ec0e2-9da7-44d8-9914-94093977e407" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/UnityProjects/AT_IB/AT_IT.apk
+/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/AT_AB.apk
 SceneListBegin?
 Assets/Scenes/SerialCommunication.unity
 SceneListEnd?
