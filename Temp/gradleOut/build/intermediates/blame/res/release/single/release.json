@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/build/intermediates/res/merged/release/mipmap-mdpi_app_icon.png.flat",
+        "source": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/src/main/res/mipmap-mdpi/app_icon.png"
+    },
+    {
+        "merged": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/build/intermediates/res/merged/release/drawable-xhdpi_app_banner.png.flat",
+        "source": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/src/main/res/drawable-xhdpi/app_banner.png"
+    },
+    {
+        "merged": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/build/intermediates/res/merged/release/raw_keep_arcore.xml.flat",
+        "source": "/Users/bsyiem/.gradle/caches/transforms-1/files-1.1/arcore_client.aar/e7f7672905ca43b1a127247cec7c8862/res/raw/keep_arcore.xml"
+    },
+    {
+        "merged": "/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/build/intermediates/res/merged/release/layout___arcore_education.xml.flat",
+        "source": "/Users/bsyiem/.gradle/caches/transforms-1/files-1.1/arcore_client.aar/e7f7672905ca43b1a127247cec7c8862/res/layout/__arcore_education.xml"
+    }
+]

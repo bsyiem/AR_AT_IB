@@ -13,7 +13,7 @@ public class SerialCommunicationManager : MonoBehaviour
         this.serialCommunicationManagerClass = new AndroidJavaClass("com.bsyiem.serialcommunicationplugin.SerialCommunication");
         this.serialCommunicationManagerClass.CallStatic("instantiate", this.gameObject.name);
         //this.instance.Call("showText", "is this working?");
-        this.instance.Call("createPhysicaloid");
+        this.instance.Call("createPhysicaloid",9600);
         this.instance.Call("openConnection");
     }
 
