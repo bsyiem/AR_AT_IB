@@ -22,7 +22,7 @@ public class BallBehaviour : MonoBehaviour
     public float speed = 1.0f;
 
     //stay with catcher for a set time
-    public float pauseTime = 0.05f;
+    public float pauseTime = 2.0f;
     private float stopWatch = 0.0f;
 
     // Start is called before the first frame update
