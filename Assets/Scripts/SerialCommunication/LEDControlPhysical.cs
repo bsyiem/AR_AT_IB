@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class LEDControlPhysical : MonoBehaviour
 {
+    //wait time range - how long till the next LED turns on
+    public int waitTimeMin = 5;
+    public int waitTimeMax = 10;
+
+    static int NUMBER_OF_LEDS = 5;
+
     bool isStarted = false;
 
     AndroidJavaClass serialCommunicationManagerClass;
@@ -36,7 +42,7 @@ public class LEDControlPhysical : MonoBehaviour
         if (!this.isStarted)
         {
             CodelabUtils._ShowAndroidToastMessage("Starting");
-            IEnumerator coroutine = SelectRandomLED(5, 5);
+            IEnumerator coroutine = SelectRandomLED(Random.Range(this.waitTimeMin,this.waitTimeMax + 1), NUMBER_OF_LEDS);
             StartCoroutine(coroutine);
         }
     }
