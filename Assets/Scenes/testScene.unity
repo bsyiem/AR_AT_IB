@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 1232660657}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703ca5a104efb1440a6d8d5d64123677, type: 3}
 --- !u!1001 &682682763
@@ -333,6 +338,11 @@ PrefabInstance:
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 1232660657}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703ca5a104efb1440a6d8d5d64123677, type: 3}
 --- !u!1 &1232660655
@@ -513,6 +523,11 @@ PrefabInstance:
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 1232660657}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703ca5a104efb1440a6d8d5d64123677, type: 3}
 --- !u!1001 &2095119684
@@ -587,6 +602,11 @@ PrefabInstance:
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 1232660657}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703ca5a104efb1440a6d8d5d64123677, type: 3}
 --- !u!1001 &4947897206004124076
@@ -656,16 +676,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4947897206778017172, guid: 703ca5a104efb1440a6d8d5d64123677,
         type: 3}
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 1232660657}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2492691121757131465, guid: 703ca5a104efb1440a6d8d5d64123677,
         type: 3}
       propertyPath: m_UseGravity

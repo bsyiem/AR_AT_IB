@@ -10,12 +10,20 @@ public class BallBehaviour : MonoBehaviour
 
     private int passedNumber = 0;
 
+    //dist from camera
     public float zDist = 3.0f;
 
+    //min distance to next catcher
     public float minDistToPass = 0.5f;
 
-
     private int catcherNumber;
+
+    //speed of ball
+    public float speed = 1.0f;
+
+    //stay with catcher for a set time
+    public float pauseTime = 0.05f;
+    private float stopWatch = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +39,24 @@ public class BallBehaviour : MonoBehaviour
     {
         if(this.transform.position == this.catcherList[this.catcherNumber].transform.position)
         {
-            this.catcherNumber = GetNextCatcherNumber(this.catcherNumber);
-            this.passedNumber++;
-            Debug.Log(this.passedNumber);
+            if(this.stopWatch >= this.pauseTime)
+            {
+                this.catcherNumber = GetNextCatcherNumber(this.catcherNumber);
+                this.passedNumber++;
+
+                this.stopWatch = 0.0f;
+                Debug.Log(this.passedNumber);
+            }
+            else
+            {
+                this.stopWatch += Time.deltaTime;
+            }
+            
         }
         else
         {
             //this.transform.position = Vector3.Lerp(this.transform.position, this.catcherList[this.catcherNumber].transform.position, 0.1f);
-            this.transform.position = Vector3.MoveTowards(this.transform.position, this.catcherList[this.catcherNumber].transform.position, Time.deltaTime * 1.5f);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, this.catcherList[this.catcherNumber].transform.position, Time.deltaTime * this.speed);
         }
     }
 

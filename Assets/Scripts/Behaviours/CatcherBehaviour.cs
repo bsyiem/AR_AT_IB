@@ -16,14 +16,14 @@ public class CatcherBehaviour : MonoBehaviour
     //distance from the camera
     public float zDist = 3.0f;
 
+    //speed of catcher
+    public float speed = 0.7f;
+
     //on arriving at a new location, catcher should wait the following seconds
     public float pauseTime = 1.5f;
 
     //var used to measure pause time
     private float stopWatch = 0.0f;
-
-    //current pause state
-    private bool pauseState = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,58 +43,37 @@ public class CatcherBehaviour : MonoBehaviour
     void Update()
     {
         if(this.firstPersonCamera != null)
-        {
-            /*
-             * if catcher is not in a paused state
-             * seelect new direction and move towards it
-             */ 
-            if (!this.pauseState)
-            {
-                /*
+        {  
+             /*
              * if direction is not set, set a new direction to move to
              */
-                if (!isSetPosition)
-                {
-                    //this.nextDirection = new Vector3(0, 0, this.firstPersonCamera.nearClipPlane + 1);
+            if (!isSetPosition)
+            {
+                //this.nextDirection = new Vector3(0, 0, this.firstPersonCamera.nearClipPlane + 1);
 
-                    this.nextPosition = this.firstPersonCamera.ViewportToWorldPoint(
-                        new Vector3(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), this.firstPersonCamera.nearClipPlane + this.zDist));
+                this.nextPosition = this.firstPersonCamera.ViewportToWorldPoint(
+                    new Vector3(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), this.firstPersonCamera.nearClipPlane + this.zDist));
 
-                    this.isSetPosition = true;
-                }
-                /*
-                 * else move to the set direction
-                 */
-                else
-                {
-                    if (this.transform.position != this.nextPosition)
-                    {
-                        //this.transform.position = Vector3.Lerp(this.transform.position, this.nextDirection, 0.04f);
-                        this.transform.position = Vector3.MoveTowards(this.transform.position, this.nextPosition, Time.deltaTime * 1.0f);
-                    }
-                    else
-                    {
-                        this.isSetPosition = false;
-                        this.pauseState = true;
-                    }
-                }
+                this.isSetPosition = true;
             }
-            /*
-             * if catcher is in a paused state
-             * set up stopwatch
-             */ 
+
+            if (this.transform.position != this.nextPosition)
+            {
+                //this.transform.position = Vector3.Lerp(this.transform.position, this.nextDirection, 0.04f);
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.nextPosition, Time.deltaTime * this.speed);
+            }
             else
             {
-                if (this.stopWatch >= this.pauseTime)
+                if(this.stopWatch >= this.pauseTime)
                 {
-                    this.pauseState = false;
+                    this.isSetPosition = false;
                     this.stopWatch = 0.0f;
                 }
                 else
                 {
-                    this.stopWatch += Time.deltaTime;    
+                    this.stopWatch += Time.deltaTime;
                 }
-            }          
+            }
         }
     }
 
@@ -116,5 +95,7 @@ public class CatcherBehaviour : MonoBehaviour
                     new Vector3(Random.Range(0.1f, 0.9f), Random.Range(0.1f, 0.9f), this.firstPersonCamera.nearClipPlane + this.zDist));
 
         this.isSetPosition = true;
+
+        this.transform.position = Vector3.MoveTowards(this.transform.position, this.nextPosition, Time.deltaTime * this.speed);
     }
 }
