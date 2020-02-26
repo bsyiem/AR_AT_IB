@@ -17,8 +17,6 @@ public class SerialCommunicationManager : MonoBehaviour
         //this.instance.Call("showText", "is this working?");
         this.instance.Call("createPhysicaloid",9600);
         this.instance.Call("openConnection");
-
-        this.instance.Call("sendData", "1");
     }
 
     // Update is called once per frame
