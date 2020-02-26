@@ -1,4 +1,0 @@
-#Mon Feb 24 12:57:14 AEDT 2020
-base.0=/Users/bsyiem/Documents/UnityProjects/AR_AT_IB/AR_AT_IB/Temp/gradleOut/build/intermediates/transforms/dexMerger/release/0
-path.0=classes.dex
-renamed.0=classes.dex

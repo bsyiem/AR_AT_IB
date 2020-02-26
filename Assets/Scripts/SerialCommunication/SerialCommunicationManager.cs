@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SerialCommunicationManager : MonoBehaviour
 {
+    bool isStarted = false;
+
     AndroidJavaClass serialCommunicationManagerClass;
     AndroidJavaObject instance { get { return serialCommunicationManagerClass.GetStatic<AndroidJavaObject>("INSTANCE"); } }
 
@@ -15,11 +17,38 @@ public class SerialCommunicationManager : MonoBehaviour
         //this.instance.Call("showText", "is this working?");
         this.instance.Call("createPhysicaloid",9600);
         this.instance.Call("openConnection");
+
+        this.instance.Call("sendData", "1");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ProcessTouch();
+    }
+
+    void ProcessTouch()
+    {
+        Touch touch;
+        if(Input.touchCount != 1 || (touch =Input.GetTouch(0)).phase != TouchPhase.Began)
+        {
+            return;
+        }
+
+        if (!this.isStarted)
+        {
+            IEnumerator coroutine = SelectRandomLED(5, 5);
+            StartCoroutine(coroutine);
+        }
+    }
+
+    IEnumerator SelectRandomLED(float time, int numberOfLEDs)
+    {
+        while (true)
+        {
+            yield return (new WaitForSeconds(time));
+            int number = Random.Range(0, numberOfLEDs - 1);
+            this.instance.Call("sendData", number.ToString());
+        } 
     }
 }
