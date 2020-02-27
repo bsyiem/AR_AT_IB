@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class LEDControlPhysical : MonoBehaviour
 {
+    //number of events
+    public int numberOfEvents = 10;
+
     //wait time range - how long till the next LED turns on
     public int waitTimeMin = 5;
     public int waitTimeMax = 10;
@@ -20,8 +23,15 @@ public class LEDControlPhysical : MonoBehaviour
     {
         this.serialCommunicationManagerClass = new AndroidJavaClass("com.bsyiem.serialcommunicationplugin.SerialCommunication");
         this.serialCommunicationManagerClass.CallStatic("instantiate", this.gameObject.name);
-        //this.instance.Call("showText", "is this working?");
+        
+        //set up connection with baudRate 9600
         this.instance.Call("createPhysicaloid",9600);
+
+        //set the shared preference file name to write data into
+        FileSetting fileSetting = GameObject.Find("FileSetting").GetComponent<FileSetting>();
+        this.instance.Call("setFileName", fileSetting.fileName);
+        
+        //open the connection    
         this.instance.Call("openConnection");
     }
 
@@ -42,18 +52,32 @@ public class LEDControlPhysical : MonoBehaviour
         if (!this.isStarted)
         {
             CodelabUtils._ShowAndroidToastMessage("Starting");
-            IEnumerator coroutine = SelectRandomLED(Random.Range(this.waitTimeMin,this.waitTimeMax + 1), NUMBER_OF_LEDS);
+            IEnumerator coroutine = SelectRandomLED(NUMBER_OF_LEDS);
             StartCoroutine(coroutine);
+            this.isStarted = true;
         }
     }
 
-    IEnumerator SelectRandomLED(float time, int numberOfLEDs)
+    IEnumerator SelectRandomLED(int numberOfLEDs)
     {
-        while (true)
+        int lastLedNumber = -1;
+        int number = -1;
+        while (numberOfEvents > 0)
         {
-            yield return (new WaitForSeconds(time));
-            int number = Random.Range(0, numberOfLEDs);
+            yield return (new WaitForSeconds(Random.Range(this.waitTimeMin, this.waitTimeMax + 1)));
+            do
+            {
+                number = Random.Range(0, numberOfLEDs);
+            } while (number == lastLedNumber);
+            
             this.instance.Call("sendData", number.ToString());
-        } 
+            numberOfEvents--;
+            lastLedNumber = number;
+        }
+
+        //wait five second before sending terminate signal
+        yield return (new WaitForSeconds(Random.Range(this.waitTimeMin, this.waitTimeMax + 1)));
+        this.instance.Call("sendData", ("#").ToString());
+
     }
 }

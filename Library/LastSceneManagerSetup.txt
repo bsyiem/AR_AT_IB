@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/SerialCommunication.unity
+- path: Assets/Scenes/AR/physicalEventAR.unity
   isLoaded: 1
   isActive: 1

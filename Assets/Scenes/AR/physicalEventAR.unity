@@ -789,6 +789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a25150145c3a059459b95792abf08659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfEvents: 3
+  waitTimeMin: 5
+  waitTimeMax: 10
 --- !u!1 &2095204069
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +867,11 @@ PrefabInstance:
       propertyPath: firstPersonCamera
       value: 
       objectReference: {fileID: 642628558}
+    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1879436066663928530, guid: 703ca5a104efb1440a6d8d5d64123677,
         type: 3}
       propertyPath: m_Name
@@ -923,11 +931,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4947897206778017173, guid: 703ca5a104efb1440a6d8d5d64123677,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703ca5a104efb1440a6d8d5d64123677, type: 3}

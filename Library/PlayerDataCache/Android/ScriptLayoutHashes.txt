@@ -2,7 +2,9 @@ Android
 PlayerPath?
 D:/UnityProjects/AT_IB/AT_IB.apk
 SceneListBegin?
-Assets/Scenes/SerialCommunication.unity
+Assets/Scenes/Opening.unity
+Assets/Scenes/AR/physicalEventAR.unity
+Assets/Scenes/Test/testScene.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlaneRenderer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -122,7 +124,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:GoogleARCore.Examples.ObjectManipulation.ManipulationSystem
-8986f7c0ea16e720c85f371a61d0802b Assembly-CSharp.dll:.LEDControlPhysical
+4dbdfec57c16e82127b0fd5a9b062e98 Assembly-CSharp.dll:.LEDControlPhysical
 72c3a3bf16e34620934073ef94cabbe1 Assembly-CSharp.dll:GoogleARCore.EnvironmentalLight
 70b5990d93842e2357518f44237e7f47 Assembly-CSharp.dll:GoogleARCore.Examples.Common.PlaneDiscoveryGuide
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
@@ -355,3 +357,5 @@ ffd8816d88b11c11d24af998cf7f948a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.FileSetting
+54643167c9ffa84ca9aff59a073153b0 Assembly-CSharp.dll:.EnterHandler

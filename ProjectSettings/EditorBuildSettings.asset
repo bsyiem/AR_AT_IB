@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SerialCommunication.unity
+    path: Assets/Scenes/Opening.unity
+    guid: 22902502d66c4fe42be4a5392218fda5
+  - enabled: 1
+    path: Assets/Scenes/AR/physicalEventAR.unity
     guid: 66f3be1511c4bf04398104a6aecbd1fb
+  - enabled: 1
+    path: Assets/Scenes/Test/testScene.unity
+    guid: faa25efd7493aac42a944a14c2382fc7
   m_configObjects: {}
