@@ -25,6 +25,17 @@ public class BallBehaviour : MonoBehaviour
     public float pauseTime = 2.0f;
     private float stopWatch = 0.0f;
 
+
+    public void resetPassedNumber()
+    {
+        this.passedNumber = 0;
+    }
+
+    public int getPassedNumber()
+    {
+        return this.passedNumber;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

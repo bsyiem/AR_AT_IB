@@ -8,6 +8,10 @@ public class LEDControlVirtual : MonoBehaviour
     //first person camer
     Camera mainCamera;
 
+    //ball obj
+    //to get the number of passes if AR content is present
+    public BallBehaviour ball;
+
     //current selectedLED
     int currentLed = -1;
 
@@ -101,6 +105,11 @@ public class LEDControlVirtual : MonoBehaviour
             IEnumerator coroutine = SelectRandomLED(NUMBER_OF_LEDS);
             StartCoroutine(coroutine);
             this.isStarted = true;
+
+            if (this.ball != null)
+            {
+                this.ball.resetPassedNumber();
+            }
         }
     }
 
@@ -178,6 +187,11 @@ public class LEDControlVirtual : MonoBehaviour
                 SwitchOffAllLeds();
                 break;
             case "#":
+                if (this.ball != null)
+                {
+                    this.instance.Call("writeToFile", "\n"+this.ball.getPassedNumber().ToString());             
+                }
+                this.instance.Call("closeFile");
                 SwitchOffAllLeds();
                 break;
                    

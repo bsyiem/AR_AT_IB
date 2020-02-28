@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LEDControlPhysical : MonoBehaviour
 {
+    //ball obj
+    //to get the number of passes if AR content is present
+    public BallBehaviour ball;
+
     //number of events
     public int numberOfEvents = 10;
 
@@ -55,6 +59,10 @@ public class LEDControlPhysical : MonoBehaviour
             IEnumerator coroutine = SelectRandomLED(NUMBER_OF_LEDS);
             StartCoroutine(coroutine);
             this.isStarted = true;
+            if (this.ball != null)
+            {
+                this.ball.resetPassedNumber();
+            }
         }
     }
 
@@ -85,6 +93,15 @@ public class LEDControlPhysical : MonoBehaviour
     // for the physical controller, this does nothing but is still called from the java code when a message is received
     void HandleArduinoMessage(string message)
     {
-
+        switch (message)
+        {
+            case "#":
+                if (this.ball != null)
+                {
+                    this.instance.Call("writeToFile", "\n"+this.ball.getPassedNumber().ToString());
+                }
+                this.instance.Call("closeFile");
+                break;
+        }
     }
 }

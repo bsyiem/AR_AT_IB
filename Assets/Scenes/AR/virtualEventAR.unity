@@ -112,6 +112,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &24442731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+    type: 3}
+  m_PrefabInstance: {fileID: 1327422646}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b38fbaa447b78241842e2be322ffd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &642628557
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -746,55 +758,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf498fc35b538884db557f7a9a2c0ef9, type: 3}
---- !u!1 &2094223438
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2094223439}
-  - component: {fileID: 2094223440}
-  m_Layer: 0
-  m_Name: ControllerVirtualLED
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2094223439
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094223438}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2094223440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094223438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e13b41d9cd6b94caeb13b043b9ffda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfEvents: 3
-  waitTimeMin: 5
-  waitTimeMax: 5
-  led_z_distance: 15
-  ledPrefab: {fileID: 1294600206862991465, guid: 5383adfdd80318749b3117471c6b93b3,
-    type: 3}
 --- !u!1 &2095204069
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,3 +906,77 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1879436067739348256}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7949443487260537264
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7949443486534050302, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_Name
+      value: ControllerVirtualLED
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050303, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949443486534050272, guid: 53b9e924ec3b62f4c941efc81531851f,
+        type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 24442731}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53b9e924ec3b62f4c941efc81531851f, type: 3}
