@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 2094223439}
   - component: {fileID: 2094223440}
   m_Layer: 0
-  m_Name: SerialCommunicationManager
+  m_Name: ControllerPhysicalLED
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfEvents: 3
   waitTimeMin: 5
-  waitTimeMax: 10
+  waitTimeMax: 5
 --- !u!1 &2095204069
 GameObject:
   m_ObjectHideFlags: 0

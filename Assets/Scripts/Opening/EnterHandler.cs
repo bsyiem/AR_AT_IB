@@ -4,41 +4,37 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public enum MScenes
-{
-    physicalEventAR,
-    virtualEventAR,
-    physicalEventNoAR,
-    virtualEventNoAR,
-    testScene
-}
+
 
 public class EnterHandler : MonoBehaviour
 {
     public FileSetting fileSetting;
     public InputField textObj;
-    public MScenes scene;
-    
+    public Dropdown dropdown;
+
+
+    string scene;
 
     public void SetSharedPreferenceFileName()
     {
         fileSetting.fileName = textObj.text;
 
+        scene = dropdown.options[dropdown.value].text;
         switch (scene)
         {
-            case MScenes.physicalEventAR:
+            case "physicalEventAR":
                 SceneManager.LoadScene("physicalEventAR");
                 break;
-            case MScenes.virtualEventAR:
+            case "virtualEventAR":
                 SceneManager.LoadScene("virtualEventAR");
                 break;
-            case MScenes.physicalEventNoAR:
+            case "physicalEventNoAR":
                 SceneManager.LoadScene("physicalEventNoAR");
                 break;
-            case MScenes.virtualEventNoAR:
+            case "virtualEventNoAR":
                 SceneManager.LoadScene("virtualEventNoAR");
                 break;
-            case MScenes.testScene:
+            case "testScene":
                 SceneManager.LoadScene("testScene");
                 break;
         }

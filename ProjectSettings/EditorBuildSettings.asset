@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test/testScene.unity
     guid: faa25efd7493aac42a944a14c2382fc7
+  - enabled: 1
+    path: Assets/Scenes/AR/virtualEventAR.unity
+    guid: 4d3b79d9db61f7549b26a2df34967573
   m_configObjects: {}

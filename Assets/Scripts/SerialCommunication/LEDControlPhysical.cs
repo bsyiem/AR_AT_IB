@@ -80,4 +80,11 @@ public class LEDControlPhysical : MonoBehaviour
         this.instance.Call("sendData", ("#").ToString());
 
     }
+
+    //all reaction times are handled by the arduino, 
+    // for the physical controller, this does nothing but is still called from the java code when a message is received
+    void HandleArduinoMessage(string message)
+    {
+
+    }
 }
