@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AR/virtualEventAR.unity
     guid: 4d3b79d9db61f7549b26a2df34967573
+  - enabled: 1
+    path: Assets/Scenes/No AR/physicalEventNoAR.unity
+    guid: 76c1b4b26d7676341b33ee7b7b074f5d
+  - enabled: 1
+    path: Assets/Scenes/No AR/virtualEventNoAR.unity
+    guid: 99a02a4facfd0f1478c1ddc3a38ecab9
   m_configObjects: {}

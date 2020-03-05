@@ -287,6 +287,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: catcherList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1879436067739348257}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: catcherList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1594669477}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: catcherList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1536563519}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: catcherList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1925129456}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: catcherList.Array.data[4]
+      value: 
+      objectReference: {fileID: 1012927273}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: firstPersonCamera
+      value: 
+      objectReference: {fileID: 642628558}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
+        type: 3}
+      propertyPath: pauseTime
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 6645294460883789291, guid: 1157b88036a652445881698befe8c546,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -357,36 +397,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.12
       objectReference: {fileID: 0}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: catcherList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1879436067739348257}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: catcherList.Array.data[1]
-      value: 
-      objectReference: {fileID: 1594669477}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: catcherList.Array.data[3]
-      value: 
-      objectReference: {fileID: 1536563519}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: catcherList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1925129456}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: catcherList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1012927273}
-    - target: {fileID: 6645294460883789290, guid: 1157b88036a652445881698befe8c546,
-        type: 3}
-      propertyPath: firstPersonCamera
-      value: 
-      objectReference: {fileID: 642628558}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1157b88036a652445881698befe8c546, type: 3}
 --- !u!114 &1327422647 stripped
@@ -978,5 +988,20 @@ PrefabInstance:
       propertyPath: ball
       value: 
       objectReference: {fileID: 1327422647}
+    - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
+        type: 3}
+      propertyPath: numberOfEvents
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
+        type: 3}
+      propertyPath: waitTimeMin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
+        type: 3}
+      propertyPath: waitTimeMax
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd02a57e3e83ec8449c30928e33cdc08, type: 3}

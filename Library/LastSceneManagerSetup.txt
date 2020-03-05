@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/AR/virtualEventAR.unity
+- path: Assets/Scenes/Test/testEmission.unity
   isLoaded: 1
   isActive: 1
