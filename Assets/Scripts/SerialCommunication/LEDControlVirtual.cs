@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LEDControlVirtual : MonoBehaviour
 {
@@ -196,5 +197,6 @@ public class LEDControlVirtual : MonoBehaviour
                 break;
                    
         }
+        SceneManager.LoadScene("Opening");
     }
 }

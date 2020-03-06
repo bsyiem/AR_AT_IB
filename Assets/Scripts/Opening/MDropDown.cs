@@ -10,7 +10,8 @@ public enum MScenes
     virtualEventAR,
     physicalEventNoAR,
     virtualEventNoAR,
-    testScene
+    testScene,
+    testEmission
 }
 
 public class MDropDown : MonoBehaviour

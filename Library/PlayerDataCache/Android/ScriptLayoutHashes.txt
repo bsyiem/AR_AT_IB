@@ -4,10 +4,11 @@ D:/UnityProjects/AT_IB/AT_IB.apk
 SceneListBegin?
 Assets/Scenes/Opening.unity
 Assets/Scenes/AR/physicalEventAR.unity
-Assets/Scenes/Test/testScene.unity
 Assets/Scenes/AR/virtualEventAR.unity
 Assets/Scenes/No AR/physicalEventNoAR.unity
 Assets/Scenes/No AR/virtualEventNoAR.unity
+Assets/Scenes/Test/testScene.unity
+Assets/Scenes/Test/testEmission.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PlaneRenderer
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -371,3 +372,4 @@ ffd8816d88b11c11d24af998cf7f948a Vuforia.UnityExtensions.dll:Vuforia.VuforiaConf
 69167579cf7fcbb2676fc1e675963dcd Vuforia.UnityExtensions.dll:Vuforia.VuMarkBehaviour
 fbbf64dcbe0662e3eda1dec45ea8f895 Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 71bb6a6b6c8f052f948db64c7dd3ca4f Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
+3e524da27263e89bea34f4df9b89515c Assembly-CSharp.dll:.SceneControllerTestEmission

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LEDControlPhysical : MonoBehaviour
 {
@@ -103,5 +104,7 @@ public class LEDControlPhysical : MonoBehaviour
                 this.instance.Call("closeFile");
                 break;
         }
+
+        SceneManager.LoadScene("Opening");
     }
 }

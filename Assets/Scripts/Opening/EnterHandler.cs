@@ -34,6 +34,9 @@ public class EnterHandler : MonoBehaviour
             case "virtualEventNoAR":
                 SceneManager.LoadScene("virtualEventNoAR");
                 break;
+            case "testEmission":
+                SceneManager.LoadScene("testEmission");
+                break;
             case "testScene":
                 SceneManager.LoadScene("testScene");
                 break;

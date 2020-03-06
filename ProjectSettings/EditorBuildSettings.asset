@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/AR/physicalEventAR.unity
     guid: 66f3be1511c4bf04398104a6aecbd1fb
   - enabled: 1
-    path: Assets/Scenes/Test/testScene.unity
-    guid: faa25efd7493aac42a944a14c2382fc7
-  - enabled: 1
     path: Assets/Scenes/AR/virtualEventAR.unity
     guid: 4d3b79d9db61f7549b26a2df34967573
   - enabled: 1
@@ -23,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/No AR/virtualEventNoAR.unity
     guid: 99a02a4facfd0f1478c1ddc3a38ecab9
+  - enabled: 1
+    path: Assets/Scenes/Test/testScene.unity
+    guid: faa25efd7493aac42a944a14c2382fc7
+  - enabled: 1
+    path: Assets/Scenes/Test/testEmission.unity
+    guid: 8e99633bf97e291498e38e8115eaa62e
   m_configObjects: {}
