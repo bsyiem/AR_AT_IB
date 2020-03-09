@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.SceneManagement;
 
 public class LEDControlVirtual : MonoBehaviour
@@ -190,13 +191,14 @@ public class LEDControlVirtual : MonoBehaviour
             case "#":
                 if (this.ball != null)
                 {
-                    this.instance.Call("writeToFile", "\n"+this.ball.getPassedNumber().ToString());             
+                    this.instance.Call("writeToFile", this.ball.getPassedNumber().ToString());             
                 }
                 this.instance.Call("closeFile");
+                this.instance.Call("closeConnection");
                 SwitchOffAllLeds();
+                SceneManager.LoadScene("Opening");
                 break;
                    
         }
-        SceneManager.LoadScene("Opening");
     }
 }

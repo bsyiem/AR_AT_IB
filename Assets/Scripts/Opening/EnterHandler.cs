@@ -17,7 +17,15 @@ public class EnterHandler : MonoBehaviour
 
     public void SetSharedPreferenceFileName()
     {
+        if (textObj.text.Trim().Equals(""))
+        {
+            return;
+        }
+
         fileSetting.fileName = textObj.text;
+
+        //always save as .csv
+        fileSetting.fileName = textObj.text + ".csv";
 
         scene = dropdown.options[dropdown.value].text;
         switch (scene)

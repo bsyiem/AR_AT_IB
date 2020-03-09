@@ -99,12 +99,14 @@ public class LEDControlPhysical : MonoBehaviour
             case "#":
                 if (this.ball != null)
                 {
-                    this.instance.Call("writeToFile", "\n"+this.ball.getPassedNumber().ToString());
+                    this.instance.Call("writeToFile", this.ball.getPassedNumber().ToString());
                 }
                 this.instance.Call("closeFile");
+                this.instance.Call("closeConnection");
+                SceneManager.LoadScene("Opening");
                 break;
         }
 
-        SceneManager.LoadScene("Opening");
+        
     }
 }
