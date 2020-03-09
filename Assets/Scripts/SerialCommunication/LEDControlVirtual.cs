@@ -196,6 +196,7 @@ public class LEDControlVirtual : MonoBehaviour
                 this.instance.Call("closeFile");
                 this.instance.Call("closeConnection");
                 SwitchOffAllLeds();
+                Destroy(GameObject.Find("FileSetting"));
                 SceneManager.LoadScene("Opening");
                 break;
                    

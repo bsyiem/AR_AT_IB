@@ -103,6 +103,7 @@ public class LEDControlPhysical : MonoBehaviour
                 }
                 this.instance.Call("closeFile");
                 this.instance.Call("closeConnection");
+                Destroy(GameObject.Find("FileSetting"));
                 SceneManager.LoadScene("Opening");
                 break;
         }
