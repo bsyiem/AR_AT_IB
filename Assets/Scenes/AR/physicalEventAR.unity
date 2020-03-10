@@ -999,17 +999,17 @@ PrefabInstance:
     - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
         type: 3}
       propertyPath: numberOfEvents
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
         type: 3}
       propertyPath: waitTimeMin
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
         type: 3}
       propertyPath: waitTimeMax
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd02a57e3e83ec8449c30928e33cdc08, type: 3}
