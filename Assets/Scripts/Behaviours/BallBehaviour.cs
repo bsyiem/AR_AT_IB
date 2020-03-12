@@ -25,10 +25,14 @@ public class BallBehaviour : MonoBehaviour
     public float pauseTime = 2.0f;
     private float stopWatch = 0.0f;
 
+    //has the experiment started
+    public bool started = false;
+
 
     public void resetPassedNumber()
     {
         this.passedNumber = 0;
+        this.started = true;
     }
 
     public int getPassedNumber()
@@ -48,27 +52,34 @@ public class BallBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(this.transform.position == this.catcherList[this.catcherNumber].transform.position)
+        if (!this.started)
         {
-            if(this.stopWatch >= this.pauseTime)
-            {
-                this.catcherNumber = GetNextCatcherNumber(this.catcherNumber);
-                this.passedNumber++;
-
-                this.stopWatch = 0.0f;
-                Debug.Log(this.passedNumber);
-            }
-            else
-            {
-                this.stopWatch += Time.deltaTime;
-            }
-            
+            this.transform.position = Vector3.MoveTowards(this.transform.position, this.catcherList[this.catcherNumber].transform.position, Time.deltaTime * this.speed);
         }
         else
         {
-            //this.transform.position = Vector3.Lerp(this.transform.position, this.catcherList[this.catcherNumber].transform.position, 0.1f);
-            this.transform.position = Vector3.MoveTowards(this.transform.position, this.catcherList[this.catcherNumber].transform.position, Time.deltaTime * this.speed);
-        }
+            if (this.transform.position == this.catcherList[this.catcherNumber].transform.position)
+            {
+                if (this.stopWatch >= this.pauseTime)
+                {
+                    this.catcherNumber = GetNextCatcherNumber(this.catcherNumber);
+                    this.passedNumber++;
+
+                    this.stopWatch = 0.0f;
+                    Debug.Log(this.passedNumber);
+                }
+                else
+                {
+                    this.stopWatch += Time.deltaTime;
+                }
+
+            }
+            else
+            {
+                //this.transform.position = Vector3.Lerp(this.transform.position, this.catcherList[this.catcherNumber].transform.position, 0.1f);
+                this.transform.position = Vector3.MoveTowards(this.transform.position, this.catcherList[this.catcherNumber].transform.position, Time.deltaTime * this.speed);
+            }
+        }       
     }
 
     private int GetNextCatcherNumber(int currentCatcherNumber)

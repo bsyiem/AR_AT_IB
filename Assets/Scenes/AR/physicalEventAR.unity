@@ -999,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
         type: 3}
       propertyPath: numberOfEvents
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8664631666837504495, guid: dd02a57e3e83ec8449c30928e33cdc08,
         type: 3}

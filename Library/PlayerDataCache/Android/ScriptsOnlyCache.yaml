@@ -17,6 +17,8 @@ ScriptsOnlyBuild:
     - SceneControllerTestEmission
     - UsbSerialManager
     - VolumetricLines.VolumetricLineBehavior
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.SpatialTracking.dll:
     - UnityEngine.SpatialTracking.TrackedPoseDriver
     UnityEngine.UI.dll:
@@ -34,6 +36,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/AR/physicalEventAR.unity:
@@ -1728,7 +1731,7 @@ ScriptsOnlyBuild:
     className: NetworkMigrationManager
   - hash:
       serializedVersion: 2
-      Hash: 69dd95230ef694b2a753299fe205c2ac
+      Hash: cc500ecabf60e06b78eec648b102cc84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BallBehaviour
