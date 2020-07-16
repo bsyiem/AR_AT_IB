@@ -66,7 +66,7 @@ public class BallBehaviour : MonoBehaviour
                     this.passedNumber++;
 
                     this.stopWatch = 0.0f;
-                    Debug.Log(this.passedNumber);
+                    //Debug.Log(this.passedNumber);
                 }
                 else
                 {
