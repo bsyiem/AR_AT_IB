@@ -7,33 +7,38 @@ public class InstructionController : MonoBehaviour
 {
 
     //instruction for each condition
-    private string trial = "The next level is a tutorial. " +
-        "In this level, you have to react as fast as possible to red lights that turn on and are shown on the screen." +
-        "You can react to them by clicking the left mouse button." +
-        "These light are small and placed in the top-left, top-right, bottom-left, bottom-right and center of the screen." +
+    private string trial = "The next level is a tutorial.\n\n" +
+        "- In this level, you have to react as fast as possible to red lights that turn on and are shown on the screen.\n" +
+        "- These lights turn on at RANDOM INTERVALS.\n" +
+        "- These lights can either be images of REAL lights or may be VIRTUAL lights.\n" +
+        "- you have to react to any RED LIGHT turning on regardless of whether they are virtual or real.\n"+
+        "- You can react to them by CLICKING THE LEFT MOUSE BUTTON.\n" +
+        "- These light are small and placed in the top-left, top-right, bottom-left, bottom-right and center of the screen.\n\n"+
         "Left click to continue";
 
-    private string pnn = "React to the red lights turning on by clicking the left mouse button." +
-        "Try not to click the left mouse button when no lights are on." +
+    private string pnn = "- React to the REAL red lights turning on by clicking the left mouse button.\n" +
+        "- Try not to click the left mouse button when no lights are on.\n\n" +
         " Left click to continue.";
-    private string pyn = "This level contains some added elements. " +
-        "You only have to react to the red lights by clicking the left mouse button. " +
-        "Try not to click the left mouse button when no lights are on. " +
+    private string pyn = "-This level contains some added elements.\n" +
+        "- You only have to react to the REAL red lights by clicking the left mouse button.\n" +
+        "- Try not to click the left mouse button when no lights are on.\n\n" +
         "Left click to continue.";
-    private string pyy = "This level contains some added elements. You have to count the number of times the red sphere" +
-        " is passed (every time it leaves a cube counts as 1 pass)." +
-        "You also have to react to the red lights by clicking the left mouse button. Left click to continue.";
+    private string pyy = "- This level contains some added elements.\n" +
+        "- You have to count the number of times the red sphere is passed (every time it leaves a cube counts as 1 pass).\n" +
+        "- You also have to react to the REAL red lights by clicking the left mouse button.\n\n" +
+        "Left click to continue.";
 
-    private string vnn = "React to the red lights turning on by clicking the left mouse button." +
-        "Try not to click the left mouse button when no lights are on." +
+    private string vnn = "- React to the VIRTUAL red lights turning on by clicking the left mouse button.\n" +
+        "- Try not to click the left mouse button when no lights are on.\n\n" +
         " Left click to continue.";
-    private string vyn = "This level contains some added elements. " +
-        "You only have to react to the red lights by clicking the left mouse button. " +
-        "Try not to click the left mouse button when no lights are on. " +
+    private string vyn = "- This level contains some added elements.\n" +
+        "- You only have to react to the VIRTUAL red lights by clicking the left mouse button.\n" +
+        "- Try not to click the left mouse button when no lights are on.\n\n" +
         "Left click to continue.";
-    private string vyy = "This level contains some added elements. You have to count the number of times the red sphere" +
-        " is passed (every time it leaves a cube counts as 1 pass)." +
-        "You also have to react to the red lights by clicking the left mouse button. Left click to continue.";
+    private string vyy = "- This level contains some added elements.\n" +
+        "- You have to count the number of times the red sphere is passed (every time it leaves a cube counts as 1 pass).\n" +
+        "- You also have to react to the VIRTUAL red lights by clicking the left mouse button.\n\n" +
+        " Left click to continue.";
 
     private MTurkSettings settings;
     private PHPCommunicationManager commManager;
@@ -54,13 +59,33 @@ public class InstructionController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string response = commManager.getLastParticipantNumber(); //i'm unsure if this is blocking. could manually block with a while loop
+
+        if(settings.currentScene == MTurkSettings.StudyScenes.OPN)
+        {
+            SetUpParticipantValues();
+        }
+ 
+        SetInstructions();
+    }
+
+    //sets participant ID and starting conditions
+    void SetUpParticipantValues()
+    {
+        string response = commManager.getLastParticipantNumber();
         int lastPID;
         if (response != null && !response.Equals(""))
         {
             int.TryParse(response, out lastPID);
             settings.pId = lastPID + 1;
         }
+
+        if (settings.pId != -1)
+        {
+            //sets up the participant number, so that the next pId can be determined
+            this.commManager.SetParticipantNumber(this.settings.pId);
+        }
+
+        Debug.Log(settings.pId);
 
         if (settings.pId % 2 == 0)
         {
@@ -70,15 +95,13 @@ public class InstructionController : MonoBehaviour
         {
             settings.startingEventType = "virtualEvent";
         }
-
-        SetInstructions();
     }
 
     //void SetInstructions(Scene scene, LoadSceneMode mode)
     void SetInstructions()
     {
-        Debug.Log(this.settings.currentScene.ToString());
-        Debug.Log(this.settings.currentCondition);
+        //Debug.Log(this.settings.currentScene.ToString());
+        //Debug.Log(this.settings.currentCondition);
 
         switch (this.settings.currentScene)
         {

@@ -1022,7 +1022,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter the number of time the sphere was passed in the last level.
+  m_Text: Enter the number of times the sphere was passed in the last level.
 --- !u!222 &1939611333
 CanvasRenderer:
   m_ObjectHideFlags: 0

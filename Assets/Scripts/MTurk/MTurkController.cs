@@ -45,15 +45,26 @@ public class MTurkController : MonoBehaviour
     bool isLedOn; //bool to donote if an LED is on
     float reactionTime; // records reaction time; keeps adding deltaTime since the frame where isLedON
 
+    //records the current LED number reacted to
+    int currentLEDNumber;
+
+    //keeps track of scene condition
+    int currenSceneCondtion;
+
+    //sets folderName
+    private string folderName;
+    //sets fileName
+    private string fileName;
 
     // Start is called before the first frame update
     void Start()
     {
         this.settings = GameObject.Find("Settings").GetComponent<MTurkSettings>();
-        //this.instructionController = GameObject.Find("InstructionController").GetComponent<InstructionController>();
         this.commManager = GameObject.Find("CommunicationManager").GetComponent<PHPCommunicationManager>();
 
-        if(this.settings.currentCondition == 0)
+        //if its the trial, use phhysical leds
+        //else set up based on Participant ID
+        if (this.settings.currentCondition == 0)
         {
             this.eventType = "physicalEvent";
         }
@@ -62,7 +73,8 @@ public class MTurkController : MonoBehaviour
             this.setEventType();
         }
 
-        if(this.eventType == "physicalEvent")
+        //load appropriate background
+        if (this.eventType == "physicalEvent")
         {
             this.bgimage.sprite = this.physicalEvents[5];
         }
@@ -71,7 +83,39 @@ public class MTurkController : MonoBehaviour
             this.bgimage.sprite = this.virtualEvents[5];
         }
 
-        //webcall php script to write to file
+        this.fileName = this.SetFileName();
+
+        //the name of the folder is the last three characters of the filename
+        //example: p0pyy will be in folder pyy
+        if (this.settings.currentCondition != 0)
+            this.folderName = this.fileName.Substring(this.fileName.Length - 3);
+    }
+
+    //sets the fileName
+    string SetFileName()
+    {
+        if(this.settings.currentCondition == 0)
+        {
+            return null;
+        }
+
+        // 1 = nn
+        // 2 = yn
+        // 0 = yy
+        int eventBasedConditionNumber = this.settings.currentCondition % 3;
+
+        switch (eventBasedConditionNumber)
+        {
+            case 0:
+                return "p" + this.settings.pId.ToString() + this.eventType[0] + "yy";
+            case 1:
+                return "p" + this.settings.pId.ToString() + this.eventType[0] + "nn";
+            case 2:
+                return "p" + this.settings.pId.ToString() + this.eventType[0] + "yn";
+        }
+
+        return "";
+
     }
 
     // Update is called once per frame
@@ -120,6 +164,8 @@ public class MTurkController : MonoBehaviour
                 StartCoroutine(coroutine);
                 this.startInstructions.gameObject.SetActive(false);
                 this.isStarted = true;
+
+                //starts ball counting
                 if (this.ball != null)
                 {
                     this.ball.resetPassedNumber();
@@ -133,12 +179,25 @@ public class MTurkController : MonoBehaviour
                 if (!isLedOn)
                 {
                     //webcll to write a false positive event
+                    // -1 denotes NA
+                    if(this.settings.currentCondition != 0)
+                    {
+                        this.commManager.sendReactionTimeEvent(this.folderName, this.fileName, "FP", -1, -1);
+                    }
+                    
                 }
                 else
                 {
-                    Debug.Log("reacted = " + this.reactionTime);
+                    //Debug.Log("reacted = " + this.reactionTime);
+
                     //webcall write this.reaction time via webcall
+                    if (this.settings.currentCondition != 0)
+                    {
+                        this.commManager.sendReactionTimeEvent(this.folderName, this.fileName, "TP", this.reactionTime, this.currentLEDNumber);
+                    }
+
                     this.reactionTime = 0.0f;//reset reaction time
+                    this.isLedOn = false;
 
                     //reset background = no LED on
                     //last index hold the image with no LED on
@@ -170,14 +229,19 @@ public class MTurkController : MonoBehaviour
             //test
             //number+=1;
             //number = number > numberOfLEDs ? 0 : number;
-
+            this.currentLEDNumber = number;
 
             if (isLedOn)
             {
-                Debug.Log(this.reactionTime);
+                //Debug.Log(this.reactionTime);
 
                 //write missed event/ false negative reaction and seconds with this.eventType
                 //this will be a webcall 
+                if (this.settings.currentCondition != 0)
+                {
+                    this.commManager.sendReactionTimeEvent(this.folderName, this.fileName, "FN", this.reactionTime, lastLedNumber);
+                }
+
                 this.reactionTime = 0.0f; //reset reaction time
             }
 
@@ -195,14 +259,33 @@ public class MTurkController : MonoBehaviour
             numberOfEvents--;
             lastLedNumber = number;
         }
-
-        //wait waitTimeMin second before sending terminate signal
-        yield return (new WaitForSeconds(Random.Range(this.waitTimeMin, this.waitTimeMin + 1)));
-
         
-        if(this.ball != null)
+        //wait before writing
+        yield return (new WaitForSeconds(Random.Range(this.waitTimeMin, this.waitTimeMin)));
+
+        //check if the last led was on
+        if (isLedOn)
+        {
+            //Debug.Log(this.reactionTime);
+
+            //write missed event/ false negative reaction and seconds with this.eventType
+            //this will be a webcall 
+            if (this.settings.currentCondition != 0)
+            {
+                this.commManager.sendReactionTimeEvent(this.folderName, this.fileName, "FN", this.reactionTime, lastLedNumber);
+            }
+
+            this.reactionTime = 0.0f; //reset reaction time
+        }
+
+        //wait before writing
+        //fixing order issues
+        yield return (new WaitForSeconds(Random.Range(1f, 1f)));
+
+        if (this.ball != null)
         {
             //write ball passes via webcall
+            this.commManager.sendPassCount(this.folderName, this.fileName, this.ball.getPassedNumber(), "actual");
         }
 
 

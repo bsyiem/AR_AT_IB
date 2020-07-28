@@ -4,8 +4,11 @@ using UnityEngine;
 
 //used to hold application settings i.e., which scene to load next 
 
+//should turn this to a singleton
 public class MTurkSettings : MonoBehaviour
 {
+    public static string SCREEN_CODE = "UOM-AR-AT";
+
     //used to keep track of current scene so that instruction controller provides the current instructions
     public enum StudyScenes
     {
@@ -22,7 +25,7 @@ public class MTurkSettings : MonoBehaviour
 
     public StudyScenes currentScene = StudyScenes.OPN;
     public int currentCondition = 0; // 0 represent the tutorial scene
-    public int pId;
+    public int pId = -1;
     public string startingEventType;
 
     private static MTurkSettings _instance;
